@@ -79,6 +79,14 @@ _model.delegate = (id)[NICellFactory class];
                         atIndexPath: (NSIndexPath *)indexPath
                          withObject: (id)object;
 
+
+/**
+ * Instantiates an instance of the given UITableViewCell class, or deques a pre-existing one.
+*/
++ (UITableViewCell *)cellWithClass:(Class)cellClass
+                         tableView:(UITableView *)tableView
+                            object:(id)object;
+
 /**
  * Map an object's class to a cell's class.
  *
