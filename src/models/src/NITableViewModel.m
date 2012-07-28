@@ -286,9 +286,20 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
   // This is a static model; nothing can be edited.
-  return NO;
+	if ([self.delegate respondsToSelector:@selector(tableView:canEditRowAtIndexPath:)]){
+		return [(id<UITableViewDataSource>)self.delegate tableView:tableView canEditRowAtIndexPath:indexPath];
+	}else{
+	  return NO;
+	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+	
+	if ([self.delegate respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)]){
+		[(id<UITableViewDataSource>)self.delegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
