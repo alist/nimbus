@@ -27,7 +27,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-NI_FIX_CATEGORY_BUG(NSStringNimbusCore)
+//NI_FIX_CATEGORY_BUG(NSStringNimbusCore)
 /**
  * For manipulating NSStrings.
  */
@@ -62,7 +62,7 @@ NI_FIX_CATEGORY_BUG(NSStringNimbusCore)
             lineBreakMode:(UILineBreakMode)lineBreakMode {
   return [self sizeWithFont:font
           constrainedToSize:CGSizeMake(width, CGFLOAT_MAX)
-              lineBreakMode:lineBreakMode].height;
+              lineBreakMode:(NSLineBreakMode)lineBreakMode].height;
 }
 // COV_NF_END
 
