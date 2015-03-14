@@ -26,11 +26,11 @@
 
 - (BOOL)isWhitespaceAndNewlines;
 
-#pragma mark Display
-
-- (CGFloat)heightWithFont: (UIFont*)font
-       constrainedToWidth: (CGFloat)width
-            lineBreakMode: (UILineBreakMode)lineBreakMode;
+//#pragma mark Display
+//
+//- (CGFloat)heightWithFont: (UIFont*)font
+//       constrainedToWidth: (CGFloat)width
+//            lineBreakMode: (UILineBreakMode)lineBreakMode;
 
 #pragma mark URL queries
 
